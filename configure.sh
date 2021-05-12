@@ -5,7 +5,7 @@ sudo dpkg-reconfigure tzdata
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y neofetch ripgrep tmux vim wget zplug
+sudo apt install -y neofetch ripgrep tmux vim zplug
 
 git clone https://github.com/SurPaul/Linux.conf.git
 cp ./Linux.conf/neofetch.conf ~/.config/neofetch/config.conf
