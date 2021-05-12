@@ -1,4 +1,4 @@
-ZSH=/usr/share/oh-my-zsh/
+ZSH=$HOME/.oh-my-zsh
 
 # CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
@@ -32,7 +32,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/scripts/zplug/init.zsh 
+source /usr/share/zplug/init.zsh 
 
 zplug "k4rthik/git-cal", as:command, from:github
 zplug "plugins/extract", from:oh-my-zsh
