@@ -22,13 +22,17 @@ alias -g zplug="LC_MESSAGES=en_US.UTF-8 zplug"
 
 source /usr/share/zplug/init.zsh
 
+zplug "plugins/adb", from:oh-my-zsh
+zplug "plugins/bgnotify", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/fancy-ctrl-z", from:oh-my-zsh
+zplug "plugins/git-auto-fetch", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/themes", from:oh-my-zsh
 zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "themes/agnoster", from:oh-my-zsh, as:theme
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 if ! zplug check --verbose; then
