@@ -20,8 +20,8 @@ alias vimconf="vim ~/.vimrc"
 alias sshconf="vim ~/.ssh/config"
 alias -g zplug="LC_MESSAGES=en_US.UTF-8 zplug"
 
-source $ZSH/oh-my-zsh.sh
-source $ZPLUG_HOME/init.zsh
+source /usr/share/zplug/init.zsh
+source $ZPLUG_REPOS/robbyrussell/oh-my-zsh/oh-my-zsh.sh
 
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/fancy-ctrl-z", from:oh-my-zsh
