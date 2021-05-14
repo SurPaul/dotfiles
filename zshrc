@@ -1,3 +1,5 @@
+ZSH=$HOME/.oh-my-zsh
+
 # CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
@@ -29,7 +31,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 source /usr/share/zplug/init.zsh
 
 zplug "k4rthik/git-cal", as:command, from:github

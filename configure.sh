@@ -7,7 +7,7 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y neofetch tmux vim zplug
 
-# sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 sudo chsh -s /bin/zsh $(whoami)
 
 git clone https://github.com/SurPaul/Linux.conf.git
