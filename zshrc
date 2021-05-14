@@ -1,5 +1,3 @@
-ZSH=$HOME/.oh-my-zsh
-
 # CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_UPDATE="true"
@@ -10,7 +8,7 @@ HYPHEN_INSENSITIVE="true"
 # ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # export ARCHFLAGS="-arch x86_64"
 export EDITOR=vim
@@ -31,8 +29,8 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zplug/init.zsh 
+# source $ZSH/oh-my-zsh.sh
+source /usr/share/zplug/init.zsh
 
 zplug "k4rthik/git-cal", as:command, from:github
 zplug "plugins/extract", from:oh-my-zsh
