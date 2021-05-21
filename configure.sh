@@ -14,12 +14,12 @@ sudo localectl set-locale LANG=en_US.UTF-8
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y neofetch tmux vim zplug
+sudo apt install -y fzf neofetch tmux vim zplug
 
 sudo chsh -s /bin/zsh $(whoami)
 
 git clone https://github.com/SurPaul/Linux.conf.git
-mkdir ~/.config/neofetch
+mkdir -p ~/.config/neofetch
 cp ./Linux.conf/neofetch.conf ~/.config/neofetch/config.conf
 cp ./Linux.conf/zshrc ~/.zshrc
 rm -rf Linux.conf
