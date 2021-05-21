@@ -1,5 +1,9 @@
 #!/bin/bash
-# TODO: Добавить проверку на суперпользователя.
+
+if [[ $(whoami) == root ]]; then
+  echo "You need to log in as a user."
+  exit 1
+fi
 
 sudo dpkg-reconfigure tzdata
 
