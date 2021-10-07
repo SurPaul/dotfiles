@@ -18,6 +18,7 @@ export PASSWORD_STORE_CHARACTER_SET=[:alnum:]
 alias zshconf="vim ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
 alias sshconf="vim ~/.ssh/config"
+alias src="exec zsh"
 alias -g zplug="LC_MESSAGES=en_US.UTF-8 zplug"
 
 source /usr/share/zplug/init.zsh
@@ -27,7 +28,6 @@ zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/fancy-ctrl-z", from:oh-my-zsh
 zplug "plugins/git-auto-fetch", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "themes/agnoster", from:oh-my-zsh, as:theme
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions", from:github
