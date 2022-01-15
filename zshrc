@@ -28,7 +28,7 @@ zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/fancy-ctrl-z", from:oh-my-zsh
 zplug "plugins/git-auto-fetch", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
-zplug "themes/agnoster", from:oh-my-zsh, as:theme
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions", from:github
 zplug "zsh-users/zsh-completions", from:github
