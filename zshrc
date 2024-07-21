@@ -5,7 +5,7 @@ setopt HIST_IGNORE_SPACE
 
 export PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:/usr/sbin"
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR=vim
+export EDITOR=nvim
 export GST_ID3_TAG_ENCODING="windows-1251"
 export PASSWORD_STORE_GENERATED_LENGTH=10
 export PASSWORD_STORE_CHARACTER_SET=[:alnum:]
