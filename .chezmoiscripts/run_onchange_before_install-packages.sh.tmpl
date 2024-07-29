@@ -1,0 +1,32 @@
+{{ if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
+
+{{ $packages := list
+      "bat"
+      "curl"
+      "git"
+      "htop"
+      "neofetch"
+      "neovim"
+      "openssh-server"
+      "ripgrep"
+      "tmux"
+      "wget"
+      "zsh" -}}
+
+{{ if eq .chezmoi.arch "amd64" -}}
+{{ $packages = concat $packages (list "lsd") -}}
+{{ end -}}
+
+{{ $sudo := "sudo " -}}
+{{ if eq .chezmoi.username "root" -}}
+{{   $sudo = "" -}}
+{{ end -}}
+
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $sudo }}apt-get update
+{{ $sudo }}apt-get install -y {{ $packages | join " " }}
+
+{{ end -}}
