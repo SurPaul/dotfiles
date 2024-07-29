@@ -13,7 +13,7 @@
       "wget"
       "zsh" -}}
 
-{{ if eq .chezmoi.arch "amd64" -}}
+{{ if and (eq .chezmoi.arch "amd64") (eq .chezmoi.osRelease.id "debian") -}}
 {{ $packages = concat $packages (list "lsd") -}}
 {{ end -}}
 
