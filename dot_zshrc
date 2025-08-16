@@ -15,7 +15,15 @@ plugins=(fancy-ctrl-z sudo bgnotify zsh-autosuggestions zsh-completions zsh-synt
 
 source $ZSH/oh-my-zsh.sh
 
+alias cat="batcat"
+alias ls="eza -l --icons=auto --group-directories-first"
+alias rm="trash-put"
+
 alias zshconf="vim ~/.zshrc"
 alias sshconf="vim ~/.ssh/config"
 
+eval "$(fzf --zsh)"
+eval "$(cscli completion zsh)" # TODO: Add CrowdSec to install script
+eval "$(netbird completion zsh)" # and Netbird: https://docs.netbird.io/how-to/installation/linux
+eval "$(resticprofile generate --zsh-completion)"
 eval "$(starship init zsh)"
