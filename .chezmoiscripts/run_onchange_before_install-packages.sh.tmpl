@@ -3,12 +3,19 @@
 {{ $packages := list
       "bat"
       "curl"
+      "eza"
       "git"
       "htop"
+      "fzf"
+      "jq"
       "neofetch"
       "neovim"
       "openssh-server"
+      "pwgen"
+      "resticprofile"
       "ripgrep"
+      "trash-cli"
+      "tree"
       "tmux"
       "wget"
       "zsh" -}}
@@ -25,6 +32,9 @@
 #!/bin/bash
 
 set -eufo pipefail
+
+# Install repository for resticprofile and other utilities
+{{ $sudo }}curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | {{ $sudo }}bash -s terminal
 
 {{ $sudo }}apt-get update
 {{ $sudo }}apt-get install -y {{ $packages | join " " }}
