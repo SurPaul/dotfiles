@@ -15,7 +15,7 @@ plugins=(fancy-ctrl-z sudo bgnotify zsh-autosuggestions zsh-completions zsh-synt
 
 source $ZSH/oh-my-zsh.sh
 
-alias cat="batcat"
+alias cat="bat"
 alias ls="eza -l --icons=auto --group-directories-first"
 alias rm="trash-put"
 
