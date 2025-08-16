@@ -34,7 +34,7 @@
 set -eufo pipefail
 
 # Install repository for resticprofile and other utilities
-{{ $sudo }}curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | {{ $sudo }}bash -s terminal
+{{ $sudo }}curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | {{ $sudo }}bash -s devops secops terminal
 
 {{ $sudo }}apt-get update
 {{ $sudo }}apt-get install -y {{ $packages | join " " }}
