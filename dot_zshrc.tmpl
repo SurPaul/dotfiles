@@ -36,7 +36,11 @@ alias zshconf="vim ~/.zshrc"
 alias sshconf="vim ~/.ssh/config"
 
 eval "$(fzf --zsh)"
-eval "$(cscli completion zsh)" # TODO: Add CrowdSec to install script
-eval "$(netbird completion zsh)" # and Netbird: https://docs.netbird.io/how-to/installation/linux
+{{ if lookPath "cscli" -}}
+eval "$(cscli completion zsh)"
+{{ end -}}
+{{ if lookPath "netbird" -}}
+eval "$(netbird completion zsh)"
+{{ end -}}
 eval "$(resticprofile generate --zsh-completion)"
 eval "$(starship init zsh)"
