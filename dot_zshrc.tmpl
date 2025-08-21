@@ -1,6 +1,10 @@
 export PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:/usr/sbin"
 export ZSH="$HOME/.oh-my-zsh"
+{{ if lookPath "nvim" -}}
+export EDITOR=nvim
+{{ else if lookPath "vim" -}}
 export EDITOR=vim
+{{ end -}}
 export PASSWORD_STORE_GENERATED_LENGTH=10
 export PASSWORD_STORE_CHARACTER_SET=[:alnum:]
 
@@ -15,7 +19,11 @@ plugins=(fancy-ctrl-z sudo bgnotify zsh-autosuggestions zsh-completions zsh-synt
 
 source $ZSH/oh-my-zsh.sh
 
+{{ if lookPath "bat" -}}
 alias cat="bat"
+{{ else if lookPath "batcat" -}}
+alias cat="batcat"
+{{ end -}}
 alias ls="eza -l --color=always --icons=always --group-directories-first"
 alias rm="trash-put"
 
