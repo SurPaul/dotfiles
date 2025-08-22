@@ -2,6 +2,7 @@ export PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:/usr/sbin"
 export ZSH="$HOME/.oh-my-zsh"
 {{ if lookPath "nvim" -}}
 export EDITOR=nvim
+alias vim="nvim"
 {{ else if lookPath "vim" -}}
 export EDITOR=vim
 {{ end -}}
