@@ -6,9 +6,9 @@ export EDITOR=nvim
 export EDITOR=vim
 {{ end -}}
 {{ if lookPath "bat" -}}
-export PAGER="bat --style=plain"
+export PAGER="bat"
 {{ else if lookPath "batcat" -}}
-export PAGER="batcat --style=plain"
+export PAGER="batcat"
 {{ end -}}
 export PASSWORD_STORE_GENERATED_LENGTH=10
 export PASSWORD_STORE_CHARACTER_SET=[:alnum:]
@@ -25,9 +25,9 @@ plugins=(fancy-ctrl-z sudo bgnotify zsh-autosuggestions zsh-completions zsh-synt
 source $ZSH/oh-my-zsh.sh
 
 {{ if lookPath "bat" -}}
-alias cat="bat --style=plain"
+alias cat="bat"
 {{ else if lookPath "batcat" -}}
-alias cat="batcat --style=plain"
+alias cat="batcat"
 {{ end -}}
 alias ls="eza -l --color=always --icons=always --group-directories-first"
 alias rm="trash-put"
