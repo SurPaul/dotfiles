@@ -1,12 +1,19 @@
-{{ if eq .chezmoi.os "linux" -}}
+{{ if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
 #!/bin/bash
 
-mkdir -p "$(bat --config-dir)/themes"
+{{ $bat := "" -}}
+{{ if lookPath "bat" -}}
+{{ $bat = "bat" -}}
+{{ else if lookPath "batcat" -}}
+{{ $bat = "batcat" -}}
+{{ end -}}
 
-wget -q -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Latte.tmTheme
-wget -q -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Frappe.tmTheme
-wget -q -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Macchiato.tmTheme
-wget -q -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+mkdir -p "$({{ $bat }} --config-dir)/themes"
 
-bat cache --build
+wget -q -P "$({{ $bat }} --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Latte.tmTheme
+wget -q -P "$({{ $bat }} --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Frappe.tmTheme
+wget -q -P "$({{ $bat }} --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Macchiato.tmTheme
+wget -q -P "$({{ $bat }} --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+
+{{ $bat }} cache --build
 {{ end }}
