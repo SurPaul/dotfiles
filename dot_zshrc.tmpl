@@ -7,8 +7,10 @@ export EDITOR=vim
 {{ end -}}
 {{ if lookPath "bat" -}}
 export PAGER="bat"
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 {{ else if lookPath "batcat" -}}
 export PAGER="batcat"
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | batcat -p -lman'"
 {{ end -}}
 export PASSWORD_STORE_GENERATED_LENGTH=10
 export PASSWORD_STORE_CHARACTER_SET=[:alnum:]
