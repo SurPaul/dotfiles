@@ -6,6 +6,7 @@
 {{   $sudo = "" -}}
 {{ end -}}
 
+{{ if lookPath "netbird" }}
 {{ $sudo }}apt-get update
 {{ $sudo }}apt-get install ca-certificates curl gnupg -y
 curl -sSL https://pkgs.netbird.io/debian/public.key | {{ $sudo }}gpg --dearmor --output /usr/share/keyrings/netbird-archive-keyring.gpg
@@ -13,4 +14,15 @@ echo 'deb [signed-by=/usr/share/keyrings/netbird-archive-keyring.gpg] https://pk
 
 {{ $sudo }}apt-get update
 {{ $sudo }}apt-get install netbird -y
+
+read -p "Set up Netbird now? [y/N]: " answer
+answer=${answer:-N}
+answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
+
+if [[ "$answer" == "y" || "$answer" == "yes" ]]; then
+    read -p "Go to https://app.netbird.io/setup-keys and copy command with setup key: " setup_key
+    {{ $sudo }}$setup_key
+fi
+
+{{ end }}
 {{ end }}
