@@ -7,9 +7,9 @@
 {{ end -}}
 
 {{ $collections := list
-    crowdsecurity/appsec-virtual-patching
-    crowdsecurity/appsec-generic-rules
-    crowdsecurity/caddy -}}
+    "crowdsecurity/appsec-virtual-patching"
+    "crowdsecurity/appsec-generic-rules"
+    "crowdsecurity/caddy" -}}
 
 {{ if lookPath "cscli" -}}
 curl -s https://install.crowdsec.net | {{ $sudo }}sh
