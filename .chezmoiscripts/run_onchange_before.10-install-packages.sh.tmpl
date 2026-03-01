@@ -1,21 +1,26 @@
+#!/bin/bash
+
+set -eufo pipefail
+
 {{ if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
 
 {{ $packages := list
       "bat"
-      "cheat"
+      # "cheat"
       "curl"
+      "dnsutils"
       "eza"
       "git"
       "htop"
-      "fd"
+      # "fd"
       "fzf"
       "jq"
-      "neofetch"
+      # "neofetch"
       "neovim"
       "openssh-server"
       "progress"
       "pwgen"
-      "resticprofile"
+      # "resticprofile"
       "ripgrep"
       "trash-cli"
       "tree"
@@ -24,21 +29,15 @@
       "zoxide"
       "zsh" -}}
 
-{{ if and (eq .chezmoi.arch "amd64") (eq .chezmoi.osRelease.id "debian") -}}
-{{ $packages = concat $packages (list "lsd") -}}
-{{ end -}}
-
 {{ $sudo := "sudo " -}}
 {{ if eq .chezmoi.username "root" -}}
 {{   $sudo = "" -}}
 {{ end -}}
 
-#!/bin/bash
-
-set -eufo pipefail
-
-# Install repository for resticprofile and other utilities
-{{ $sudo }}curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | {{ $sudo }}bash -s devops secops terminal
+# Install repository for resticprofile and other cli utilities
+# {{ if not (stat (joinPath "/etc/apt/sources.list.d" "wakemeops.list")) -}}
+# {{ $sudo }}curl -sSL https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository | {{ $sudo }}bash -s devops secops terminal
+# {{ end -}}
 
 {{ $sudo }}apt-get update
 {{ $sudo }}apt-get install -y {{ $packages | join " " }}
